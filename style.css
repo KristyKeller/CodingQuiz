@@ -7,12 +7,20 @@ body {
 body {
     font-family: sans-serif;
     background-color: #f9fbfd;
+  
 }
 
 .navbar-text {
-    padding: justify;
+    padding: 50px;
     text-align: center;
-    margin: center;
+    margin: 30px;
+    padding-top: 60px;
+}
+
+.card-body {
+    padding: 60px;
+    margin: 30px;
+    text-align: center;
 }
 
 header {
