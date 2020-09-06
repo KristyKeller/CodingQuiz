@@ -31,8 +31,13 @@ header {
     font-size: 300%;
 }
 
+.main-border {
+    text-align: left;
+}
+
+
 body {
     padding: 2rem;
     font-family: 'Just Another Hand', cursive;
-    background: #f3f3f3;
+    background: #352525;
 }
