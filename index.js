@@ -1,5 +1,5 @@
-// var timer = 60;
-// var questions = [
+var timer = 60;
+var questions = ["Question 1", "Question 2", "Question 3", "Question 4", "Question 5", "Question 6"]; 
 //     {
 //         questionTitle: "What is"
 //         choice1: "",
