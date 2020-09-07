@@ -13,26 +13,28 @@ body {
 .navbar-text {
     padding: 50px;
     text-align: center;
-    margin: 30px;
     padding-top: 60px;
 }
 
 .card-body {
     padding: 60px;
-    margin: 30px;
+    border-left: 50px;
+    border-top: 200px;
+    margin: 70px;
     text-align: center;
 }
 
 header {
     text-align: center;
-    padding: 20px;
-    padding-top: 200px;
+    padding: 10px;
     padding-bottom: 80px;
-    font-size: 300%;
+    font-size: 250%;
+    margin: 70px;
 }
 
 .main-border {
     text-align: left;
+    border-left: 50px;
 }
 
 
