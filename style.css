@@ -20,16 +20,16 @@ body {
     padding: 60px;
     border-left: 50px;
     border-top: 200px;
-    margin: 70px;
+    margin: 10px;
     text-align: center;
 }
 
 header {
     text-align: center;
-    padding: 10px;
+    padding: 30px;
     padding-bottom: 80px;
     font-size: 250%;
-    margin: 70px;
+    margin: 10px;
 }
 
 .main-border {
