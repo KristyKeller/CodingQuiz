@@ -5,9 +5,7 @@
 var start = document.getElementById("start");
 var quiz = document.getElementById("quiz");
 var question = document.getElementById("question");
-var score = 0; //might be set wrong 
-var timer = 60;
-
+var score = 0; 
 
 //Start
 document.getElementById("start").onclick = startQuiz;
@@ -18,7 +16,6 @@ function startQuiz() {
     quiz.style.display = "block";
 }
 
-// }
 // Attach onclick to choice buttons
 //Choice 1
 document.getElementById("choice1").onclick = choice1;
@@ -73,36 +70,24 @@ function checkQuestion(correct) {
     }
 }
 
-var setTime = 60;
-    // Render timer
-    // window.onload to display?
+    // Timer 
     //in function, do timer -10 for wrong questions
-    window.onload = function setTime() {
-        timer = setInterval(function () {
-            secondsLeft = 60;
-            timerId.textContent = secondsLeft + "Time's up ";
-
-            if (secondsLeft === 0) {
-                clearInterval(timerInterval);
-                sendMessage();
-            }
-
-        }, 1000);
-    }
-
-function sendMessage() {
-    timeEl.textContent = "Time's up";
-
-}
-
-setTime();
-// confused how to get timer to respond to right or wrong responses 
-
-
+    var counter = 60;
+    var interval = setInterval(function() {
+        counter--; 
+        
+        if (counter <= 0) {
+            clearInterval(interval);
+            $('timer').HTML("<h3>Time's up!</h3>");
+            return;
+        }else{
+            $('#time').text(counter);
+            console.log("Timer -->" + counter);
+        }
+    }, 1000);
 
 // Variables for questions
 // Question choices and correct answers
-
 let questions = [
     {
         question: "How to write an IF statement for executing some code if 'i' is NOT equal to 5?",
