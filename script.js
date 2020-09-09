@@ -9,11 +9,22 @@ var choice1 = document.getElementById("choice1");
 var choice2 = document.getElementById("choice2");
 var choice3 = document.getElementById("choice3");
 var choice4 = document.getElementById("choice4");
-var scoreDiv = document.getElementById("score");
+var score = 0;
 var timer = 60;
+
+
+// Attach click to choice HTML buttons
+// need to double check html because button on click isn't working?
+
+document.getElementById("choice1").addEventListener("click", myFunction);
+
+function myFunction() {
+    document.getElementById("choice1").innerHTML;
+}
 
 // Variables for questions
  // Question choices and correct answers
+
  let questions = [
     {
         question: "How to write an IF statement for executing some code if 'i' is NOT equal to 5?",
@@ -69,8 +80,11 @@ var timer = 60;
 
     }
 ];
+
+
 var lastQuestion = questions.length - 1;
 let runningQuestion = 0;
+
 
 // Render questions
 function renderQuestion() {
@@ -81,17 +95,9 @@ function renderQuestion() {
     choice3.innerHTML = q.choice3;
     choice4.innerHTML = q.choice4;
 }
-// write check answer function to see if questions = array 
-// need to double check html because button on click isn't working
 
-
-//Check answers 
 var questionRight
 var questionWrong
-function checkAnswers(){
-
-  }
-
   function checkQuestion(correct) {
     if(questionRight == questions[runningQuestion].correct) {
         console.log(questionRight);
@@ -107,6 +113,17 @@ document.write("INCORRECT!");
 score--;
 }
   }
+
+  // write check answer function to see if questions = array 
+//Check answers 
+function checkAnswers(){
+    if (output.value == questions.checkAnswers) {
+        score++;
+            }
+}
+
+
+
 // Render timer
 
 
