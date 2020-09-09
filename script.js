@@ -5,139 +5,111 @@
 var start = document.getElementById("start");
 var quiz = document.getElementById("quiz");
 var question = document.getElementById("question");
-var answers = document.getElementById("answers");
-var correctAnswer = document.getElementById("correctAnswer");
+var choice1 = document.getElementById("choice1");
+var choice2 = document.getElementById("choice2");
+var choice3 = document.getElementById("choice3");
+var choice4 = document.getElementById("choice4");
 var scoreDiv = document.getElementById("score");
 var timer = 60;
 
 // Variables for questions
- // Question choices and correct answers
- let questions = [
+// Question choices and correct answers
+let questions = [
     {
         question: "How to write an IF statement for executing some code if 'i' is NOT equal to 5?",
-        answers: {
-        a: "if i =! 5 then",
-        b: "if (i <> 5)",
-        c: "if i <> 5",
-        d: "if (i != 5)",
-        },
-        correct: "d"
+        choice1: "if i =! 5 then",
+        choice2: "if (i <> 5)",
+        choice3: "if i <> 5",
+        choice4: "if (i != 5)",
+        correct: "4"
+    }
+
+  //Check answers 
+  function checkQuestion() {
+        if (questionRight === questions[runningQuestion].correct) {
+            //answer is correct
+            score++;
+            document.write("CORRECT!");
+        }
+        else {
+            (questionWrong === questions[runningQuestion].wrong);
+            //answer is incorrect 
+            document.write("INCORRECT!");
+            score--;
+        }
+
     },
     {
         question: "How does a WHILE loop start?",
-        a: "while (i <= 10;i++)",
-        b: "while i = 1 to 10",
-        c: "while (i <= 10)",
-        d: "while i <= 10",
+        choice1: "while (i <= 10;i++)",
+        choice2: "while i = 1 to 10",
+        choice3: "while (i <= 10)",
+        choice4: "while i <= 10",
         correct: "3"
 
     },
     {
         question: "How does a FOR loop start?",
-        a: "for (i = 0; i <= 5; i++)",
-        b: "for (i <= 5; i++)",
-        c: "for (i = 0; i <= 5)",
-        d: "for i = 1 to 5",
+        choice1: "for (i = 0; i <= 5; i++)",
+        choice2: "for (i <= 5; i++)",
+        choice3: "for (i = 0; i <= 5)",
+        choice4: "for i = 1 to 5",
         correct: "1"
 
     },
     {
         question: "How do you write 'Hello World' in an alert box?",
-        a: "alert('Hello World');",
-        b: "alertBox('Hello World');",
-        c: "msgBox('Hello World');",
-        d: " msg('Hello World');",
+        choice1: "alert('Hello World');",
+        choice2: "alertBox('Hello World');",
+        choice3: "msgBox('Hello World');",
+        choice4: " msg('Hello World');",
         correct: "1"
 
     },
     {
         question: "How do you create a function in JavaScript?",
-        a: "function = myFunction()",
-        b: "function myFunction()",
-        c: "function:MyFunction()",
-        d: "function myFunction",
+        choice1: "function = myFunction()",
+        choice2: "function myFunction()",
+        choice3: "function:MyFunction()",
+        choice4: "function myFunction",
         correct: "2"
 
     },
     {
         question: "How to write an IF statement in JavaScript?",
-        a: "if i==5 then",
-        b: "if (i==5)",
-        c: "if i==5 then",
-        d: "if i=5",
+        choice1: "if i==5 then",
+        choice2: "if (i==5)",
+        choice3: "if i==5 then",
+        choice4: "if i=5",
         correct: "2"
 
     }
 ];
-
-// Build questions
-function renderQuestion() {
-    let q = questions[runningQuestion];
-    question.innerHTML = "<p>" + q.question + "</p>";
-    a.innerHTML = q.a;
-    b.innerHTML = q.b;
-    c.innerHTML = q.c;
-    d.innerHTML = q.d;
-}
-
 var lastQuestion = questions.length - 1;
 let runningQuestion = 0;
 
-function buildQuiz (){
-const output = [];
+// Render questions
+function renderQuestion() {
+    let q = questions[runningQuestion];
+    question.innerHTML = "<p>" + q.question + "</p>";
+    choice1.innerHTML = q.choice1;
+    choice2.innerHTML = q.choice2;
+    choice3.innerHTML = q.choice3;
+    choice4.innerHTML = q.choice4;
 
-// For each question:
-question.forEach(
-    (currentQuestion, questionNumber) => {
-// Store possible answers
-        var answers = [];
-// For each possible answer 
-        for(letter in currentQuestion.answers){
-            answers.push(
-                `<label>
-                <input type="radio" name="question${questionNumber}" value="${letter}"> 
-                ${letter} :
-                ${currentQuestion.answers[letter]}
-            </label>`    
-            );
-            }
-//add question and its answers to the output
-`<div class="question"> $
-        });
+    // Render timer
+    var questionRight
+    var questionWrong
+
+    // function renderTimer(){
+    //     if (timer ) //confused how to get timer to respond to right or wrong responses 
+    // }
+    //Hide start button and render questions based on clicks
+    document.getElementById("start").onclick = startQuiz;
+    console.log("click");
+    //Start quiz
+    function startQuiz() {
+        start.style.display = "none";
+        renderQuestion();
+        quiz.style.display = "block";
     }
-
-
-
-//   //Check answers 
-//   function checkQuestion() {
-//     if(questionRight === questions[runningQuestion].correct) {
-// //answer is correct
-// score++;
-// document.write("CORRECT!");
-// }
-// else {
-//     (questionWrong === questions[runningQuestion].wrong);
-// //answer is incorrect 
-// document.write("INCORRECT!");
-// score--;
-// }
-//   }
-
-
-
-// Render timer
-// var questionRight
-// var questionWrong
-
-// function renderTimer(){
-//     if (timer ) //confused how to get timer to respond to right or wrong responses 
-// }
-//Hide start button and render questions based on clicks
-document.getElementById("start").onclick = startQuiz;
-console.log("click"); 
-//Start quiz
-function startQuiz() {
-    start.style.display = "none";
-    renderQuestion();
-    quiz.style.display = "block";
-}
