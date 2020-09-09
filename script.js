@@ -13,8 +13,8 @@ var scoreDiv = document.getElementById("score");
 var timer = 60;
 
 // Variables for questions
-// Question choices and correct answers
-let questions = [
+ // Question choices and correct answers
+ let questions = [
     {
         question: "How to write an IF statement for executing some code if 'i' is NOT equal to 5?",
         choice1: "if i =! 5 then",
@@ -22,22 +22,6 @@ let questions = [
         choice3: "if i <> 5",
         choice4: "if (i != 5)",
         correct: "4"
-    }
-
-  //Check answers 
-  function checkQuestion() {
-        if (questionRight === questions[runningQuestion].correct) {
-            //answer is correct
-            score++;
-            document.write("CORRECT!");
-        }
-        else {
-            (questionWrong === questions[runningQuestion].wrong);
-            //answer is incorrect 
-            document.write("INCORRECT!");
-            score--;
-        }
-
     },
     {
         question: "How does a WHILE loop start?",
@@ -96,20 +80,46 @@ function renderQuestion() {
     choice2.innerHTML = q.choice2;
     choice3.innerHTML = q.choice3;
     choice4.innerHTML = q.choice4;
+}
+// write check answer function to see if questions = array 
+// need to double check html because button on click isn't working
 
-    // Render timer
-    var questionRight
-    var questionWrong
 
-    // function renderTimer(){
-    //     if (timer ) //confused how to get timer to respond to right or wrong responses 
-    // }
-    //Hide start button and render questions based on clicks
-    document.getElementById("start").onclick = startQuiz;
-    console.log("click");
-    //Start quiz
-    function startQuiz() {
-        start.style.display = "none";
-        renderQuestion();
-        quiz.style.display = "block";
-    }
+//Check answers 
+var questionRight
+var questionWrong
+function checkAnswers(){
+
+  }
+
+  function checkQuestion(correct) {
+    if(questionRight == questions[runningQuestion].correct) {
+        console.log(questionRight);
+//answer is correct
+score++;
+document.write("CORRECT!");
+}
+else {
+    (questionWrong == questions[runningQuestion].wrong);
+    console.log(questionWrong);
+//answer is incorrect 
+document.write("INCORRECT!");
+score--;
+}
+  }
+// Render timer
+
+
+// function renderTimer(){
+//     if (timer ) //confused how to get timer to respond to right or wrong responses 
+// }
+//Hide start button and render questions based on clicks
+document.getElementById("start").onclick = startQuiz;
+console.log("click"); 
+//Start quiz
+function startQuiz() {
+    start.style.display = "none";
+    renderQuestion();
+    quiz.style.display = "block";
+}
+  
