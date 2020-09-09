@@ -11,7 +11,6 @@ var timer = 60;
 
 //Start
 document.getElementById("start").onclick = startQuiz;
-console.log("click");
 
 function startQuiz() {
     start.style.display = "none";
@@ -23,53 +22,47 @@ function startQuiz() {
 // Attach onclick to choice buttons
 //Choice 1
 document.getElementById("choice1").onclick = choice1;
-console.log("click");
 
 function choice1() {
-    alert("Test");
     document.getElementById("choice1").innerHTML;
     renderQuestion();
 }
 
 // Choice 2
 document.getElementById("choice2").onclick = choice2;
-console.log("click");
 
 function choice2() {
-    alert("Test");
+
     document.getElementById("choice2").innerHTML;
     renderQuestion();
 }
 
 // Choice 3
 document.getElementById("choice3").onclick = choice3;
-console.log("click");
 
 function choice3() {
-    alert("Test");
+
     document.getElementById("choice3").innerHTML;
     renderQuestion();
 }
 
 // Choice 4
 document.getElementById("choice4").onclick = choice4;
-console.log("click");
 
 function choice4() {
-    alert("Test");
+
     document.getElementById("choice4").innerHTML;
     renderQuestion();
 }
 
 //Showing user if their choice is right or wrong
-var questionRight
-var questionWrong
+var questionRight 
+var questionWrong 
 function checkQuestion(correct) {
     if (questionRight == questions[runningQuestion].correct) {
-        console.log(questionRight);
         //answer is correct
         score++;
-        document.write("CORRECT!");
+        alert("CORRECT!");
     }
     else {
         (questionWrong == questions[runningQuestion].wrong);
@@ -80,30 +73,29 @@ function checkQuestion(correct) {
     }
 }
 
-// var setTime = 60;
-// var
-//     // Render timer
-//     // window.onload to display?
-//     //in function, do timer -10 for wrong questions
-//     window.onload = function setTime() {
-//         timer = setInterval(function () {
-//             secondsLeft = 60;
-//             timerId.textContent = secondsLeft + "Time's up ";
+var setTime = 60;
+    // Render timer
+    // window.onload to display?
+    //in function, do timer -10 for wrong questions
+    window.onload = function setTime() {
+        timer = setInterval(function () {
+            secondsLeft = 60;
+            timerId.textContent = secondsLeft + "Time's up ";
 
-//             if (secondsLeft === 0) {
-//                 clearInterval(timerInterval);
-//                 sendMessage();
-//             }
+            if (secondsLeft === 0) {
+                clearInterval(timerInterval);
+                sendMessage();
+            }
 
-//         }, 1000);
-//     }
+        }, 1000);
+    }
 
-// function sendMessage() {
-//     timeEl.textContent = "Time's up";
+function sendMessage() {
+    timeEl.textContent = "Time's up";
 
-// }
+}
 
-// setTime();
+setTime();
 // confused how to get timer to respond to right or wrong responses 
 
 
