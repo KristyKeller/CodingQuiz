@@ -5,27 +5,109 @@
 var start = document.getElementById("start");
 var quiz = document.getElementById("quiz");
 var question = document.getElementById("question");
-var choice1 = document.getElementById("choice1");
-var choice2 = document.getElementById("choice2");
-var choice3 = document.getElementById("choice3");
-var choice4 = document.getElementById("choice4");
-var score = 0;
+var score = 0; //might be set wrong 
 var timer = 60;
 
+//Start
+document.getElementById("start").onclick = startQuiz;
+console.log("click");
 
-// Attach click to choice HTML buttons
-// need to double check html because button on click isn't working?
-
-document.getElementById("choice1").addEventListener("click", myFunction);
-
-function myFunction() {
-    document.getElementById("choice1").innerHTML;
+function startQuiz() {
+    start.style.display = "none";
+    renderQuestion();
+    quiz.style.display = "block";
 }
 
-// Variables for questions
- // Question choices and correct answers
+// }
+// Attach onclick to choice buttons
+//Choice 1
+document.getElementsByClassName("choice1").onclick = choice1;
+console.log("click");
 
- let questions = [
+function choice1() {
+    alert("Test");
+    document.getElementsByClassName("choice1").innerHTML;
+    // vis = 0
+}
+
+// Choice 2
+document.getElementsByClassName("choice2").onclick = choice2;
+console.log("click");
+
+function choice2() {
+    alert("Test");
+    document.getElementsByClassName("choice2").innerHTML;
+    // vis = 0
+}
+
+// Choice 3
+document.getElementsByClassName("choice3").onclick = choice3;
+console.log("click");
+
+function choice3() {
+    alert("Test");
+    document.getElementsByClassName("choice3").innerHTML;
+    // vis = 0
+}
+
+// Choice 4
+document.getElementsByClassName("choice4").onclick = choice4;
+console.log("click");
+
+function choice4() {
+    alert("Test");
+    document.getElementsByClassName("choice4").innerHTML;
+    // vis = 0
+}
+
+//Showing user if their choice is right or wrong
+var questionRight
+var questionWrong
+function checkQuestion(correct) {
+    if (questionRight == questions[runningQuestion].correct) {
+        console.log(questionRight);
+        //answer is correct
+        score++;
+        document.write("CORRECT!");
+    }
+    else {
+        (questionWrong == questions[runningQuestion].wrong);
+        console.log(questionWrong);
+        //answer is incorrect 
+        document.write("INCORRECT!");
+        score--;
+    }
+}
+
+
+// Render timer
+// function setTime() {
+//         timer = setInterval(function() {
+//       secondsLeft = 60;
+//       timerId.textContent = secondsLeft + "Time's up ";
+
+//       if(secondsLeft === 0) {
+//         clearInterval(timerInterval);
+//         sendMessage();
+//       }
+
+//     }, 1000);
+//   }
+
+//   function sendMessage() {
+//     timeEl.textContent = " ";
+
+//   }
+
+//   setTime();
+//confused how to get timer to respond to right or wrong responses 
+
+
+
+// Variables for questions
+// Question choices and correct answers
+
+let questions = [
     {
         question: "How to write an IF statement for executing some code if 'i' is NOT equal to 5?",
         choice1: "if i =! 5 then",
@@ -96,47 +178,6 @@ function renderQuestion() {
     choice4.innerHTML = q.choice4;
 }
 
-var questionRight
-var questionWrong
-  function checkQuestion(correct) {
-    if(questionRight == questions[runningQuestion].correct) {
-        console.log(questionRight);
-//answer is correct
-score++;
-document.write("CORRECT!");
-}
-else {
-    (questionWrong == questions[runningQuestion].wrong);
-    console.log(questionWrong);
-//answer is incorrect 
-document.write("INCORRECT!");
-score--;
-}
-  }
-
-  // write check answer function to see if questions = array 
-//Check answers 
-function checkAnswers(){
-    if (output.value == questions.checkAnswers) {
-        score++;
-            }
-}
 
 
 
-// Render timer
-
-
-// function renderTimer(){
-//     if (timer ) //confused how to get timer to respond to right or wrong responses 
-// }
-//Hide start button and render questions based on clicks
-document.getElementById("start").onclick = startQuiz;
-console.log("click"); 
-//Start quiz
-function startQuiz() {
-    start.style.display = "none";
-    renderQuestion();
-    quiz.style.display = "block";
-}
-  
