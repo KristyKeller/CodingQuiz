@@ -33,118 +33,117 @@
                     <!-- Quiz questions -->
 
                     <span class="main-border">
-<!-- <button onclick="showAlert()"> ? -->
-                        <div class="question1" style="display : none;">
+                        <!-- <button onclick="showAlert()"> ? -->
+                        <div class="question1">
                             <p id="question">How to write an IF statement for executing some code if 'i' is NOT equal to
                                 5?</p>
-                            <p><button class="choice1">
+                            <p><button id="choice1">
                                     if i =! 5 then
                                 </button></p>
-                            <p><button class="choice2">
+                            <p><button id="choice2">
                                     if (i <> 5)
                                 </button></p>
-                            <p><button class="choice3">
-                                    if i <> 5
+                            <p><button id="choice3">
+                                    if i <> 5 
                                 </button></p>
-                            <p><button class="choice4">
+                            <p><button id="choice4">
                                     if (i != 5)
                                 </button></p>
                         </div>
                         <!-- Question 2 -->
                         <!-- Correct choice: choice3 -->
-                        <div class="question2" style="display : none;"></div>
-                            <p id="question">How does a WHILE loop start?</p>
-                            <p><button class="choice1">
-                                    while (i <= 10;i++) </button>
-                            </p>
-                            <p><button class="choice2">
-                                    while i = 1 to 10
-                                </button></p>
-                            <p><button class="choice3">
-                                    while (i <= 10) </button>
-                            </p>
-                            <p><button class="choice4">
-                                    while i <= 10 </button>
-                            </p>
+                        <div class="question2" style="display : none;">
+                        <p id="question">How does a WHILE loop start?</p>
+                        <p><button id="choice1">
+                                while (i <= 10;i++) </button>
+                        </p>
+                        <p><button id="choice2">
+                                while i = 1 to 10
+                            </button></p>
+                        <p><button id="choice3">
+                                while (i <= 10) </button>
+                        </p>
+                        <p><button id="choice4">
+                                while i <= 10 </button>
+                        </p>
                         </div>
 
-                        <!-- Question 3 -->
-                        <!-- Correct answer: answer1 -->
-                        <div class="question3" style="display : none;">
-                            <p id="question">How does a FOR loop start?</p>
-                            <p><button class="choice1">
-                                    for (i = 0; i <= 5; i++) </button>
-                            </p>
-                            <p><button class="choice2">
-                                    for (i <= 5; i++) </button>
-                            </p>
-                            <p><button class="choice3">
-                                    for (i = 0; i <= 5) </button>
-                            </p>
-                            <p><button class="choice4">
-                                    for i = 1 to 5
-                                </button></p>
-                        </div>
 
-                        <!-- Question 4 -->
-                        <!-- Correct answer: answer1 -->
-                        <div class="question4" style="display : none;">
-                            <p id="question">How do you write 'Hello World' in an alert box?</p>
-                            <p><button class="choice1">
-                                    alert('Hello World');
-                                </button></p>
-                            <p><button class="choice2">
-                                    alertBox('Hello World');
-                                </button></p>
-                            <p><button class="choice3">
-                                    msgBox('Hello World');
-                                </button></p>
-                            <p><button class="choice4">
-                                    msg('Hello World');
-                                </button></p>
-                        </div>
-
-                        <!-- Question 5 -->
-                        <!-- Correct answer: choice2 -->
-                        <div class="question5" style="display : none;">
-                            <p id="question">How do you create a function in JavaScript?</p>
-                            <p><button class="choice1">
-                                    function = myFunction()
-                                </button></p>
-                            <p><button class="choice2">
-                                    function myFunction()
-                                </button></p>
-                            <p><button class="choice3">
-                                    function:MyFunction()
-                                </button></p>
-                            <p><button class="choice4">
-                                    function myFunction
-                                </button></p>
-                        </div>
-
-                        <!-- Question 6 -->
-                        <!-- Correct answer: choice2 -->
-                        <div class="question6" style="display : none;">
-                            <p id="question">How to write an IF statement in JavaScript?</p>
-                            <p><button class="choice1">
-                                    if i==5 then
-                                </button></p>
-                            <p><button class="choice2">
-                                    if (i==5)
-                                </button></p>
-                            <p><button class="choice3">
-                                    if i==5 then
-                                </button></p>
-                            <p><button class="choice4">
-                                    if i=5
-                                </button></p>
-                        </div>
+                <!-- Question 3 -->
+                <!-- Correct answer: answer1 -->
+                <div class="question3" style="display : none;">
+                    <p id="question">How does a FOR loop start?</p>
+                    <p><button id="choice1">
+                            for (i = 0; i <= 5; i++) </button>
+                    </p>
+                    <p><button id="choice2">
+                            for (i <= 5; i++) </button>
+                    </p>
+                    <p><button id="choice3">
+                            for (i = 0; i <= 5) </button>
+                    </p>
+                    <p><button id="choice4">
+                            for i = 1 to 5
+                        </button></p>
                 </div>
-</body>
-</div>
-</div>
-</div>
-<script src="./script.js"></script>
+
+                <!-- Question 4 -->
+                <!-- Correct answer: answer1 -->
+                <div class="question4" style="display : none;">
+                    <p id="question">How do you write 'Hello World' in an alert box?</p>
+                    <p><button id="choice1">
+                            alert('Hello World');
+                        </button></p>
+                    <p><button id="choice2">
+                            alertBox('Hello World');
+                        </button></p>
+                    <p><button id="choice3">
+                            msgBox('Hello World');
+                        </button></p>
+                    <p><button id="choice4">
+                            msg('Hello World');
+                        </button></p>
+                </div>
+
+                <!-- Question 5 -->
+                <!-- Correct answer: choice2 -->
+                <div class="question5" style="display : none;">
+                    <p id="question">How do you create a function in JavaScript?</p>
+                    <p><button id="choice1">
+                            function = myFunction()
+                        </button></p>
+                    <p><button id="choice2">
+                            function myFunction()
+                        </button></p>
+                    <p><button id="choice3">
+                            function:MyFunction()
+                        </button></p>
+                    <p><button id="choice4">
+                            function myFunction
+                        </button></p>
+                </div>
+
+                <!-- Question 6 -->
+                <!-- Correct answer: choice2 -->
+                <div class="question6" style="display : none;">
+                    <p id="question">How to write an IF statement in JavaScript?</p>
+                    <p><button id="choice1">
+                            if i==5 then
+                        </button></p>
+                    <p><button id="choice2">
+                            if (i==5)
+                        </button></p>
+                    <p><button id="choice3">
+                            if i==5 then
+                        </button></p>
+                    <p><button id="choice4">
+                            if i=5
+                        </button></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./script.js"></script>
 </body>
 
 </html>
