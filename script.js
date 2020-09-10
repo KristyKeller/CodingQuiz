@@ -23,6 +23,7 @@ document.getElementById("choice1").onclick = choice1;
 function choice1() {
     document.getElementById("choice1").innerHTML;
     renderQuestion();
+  
 }
 
 // Choice 2
@@ -32,6 +33,7 @@ function choice2() {
 
     document.getElementById("choice2").innerHTML;
     renderQuestion();
+  
 }
 
 // Choice 3
@@ -41,6 +43,7 @@ function choice3() {
 
     document.getElementById("choice3").innerHTML;
     renderQuestion();
+   
 }
 
 // Choice 4
@@ -50,26 +53,31 @@ function choice4() {
 
     document.getElementById("choice4").innerHTML;
     renderQuestion();
+   
 }
 
-//Showing user if their choice is right or wrong
-var questionRight 
-var questionWrong 
-function checkQuestion(correct) {
-    if (questionRight == questions[runningQuestion].correct) {
-        //answer is correct
-        score++;
-        alert("CORRECT!");
-    }
-    else {
-        (questionWrong == questions[runningQuestion].wrong);
-        console.log(questionWrong);
-        //answer is incorrect 
-        document.write("INCORRECT!");
-        score--;
-    }
-}
+// //Showing user if their choice is right or wrong
+var questionRight = 0;
+var questionWrong  = 0;
+function checkQuestion() {
 
+    let correctAnswer = `${questions[runningQuestion].correct}`
+   
+   // let currentQuestionClass =  `.question${runningQuestion}`
+
+    $("button").on("click", function(){
+        let currentBtn = $(this).attr("id");
+        if (correctAnswer == currentBtn){
+            alert("correct")
+            counter = counter + 5;
+        } else {
+            counter = counter - 5;
+            alert("incorrect")
+        }
+    })
+
+    //let currentQuestionAnswer = $(currentQuestionClass).find()
+}
     // Timer 
     //in function, do timer -10 for wrong questions
     var counter = 60;
@@ -95,7 +103,7 @@ let questions = [
         choice2: "if (i <> 5)",
         choice3: "if i <> 5",
         choice4: "if (i != 5)",
-        correct: "4"
+        correct: "choice4"
     },
     {
         question: "How does a WHILE loop start?",
@@ -103,7 +111,7 @@ let questions = [
         choice2: "while i = 1 to 10",
         choice3: "while (i <= 10)",
         choice4: "while i <= 10",
-        correct: "3"
+        correct: "choice3"
 
     },
     {
@@ -112,7 +120,7 @@ let questions = [
         choice2: "for (i <= 5; i++)",
         choice3: "for (i = 0; i <= 5)",
         choice4: "for i = 1 to 5",
-        correct: "1"
+        correct: "choice1"
 
     },
     {
@@ -121,7 +129,7 @@ let questions = [
         choice2: "alertBox('Hello World');",
         choice3: "msgBox('Hello World');",
         choice4: " msg('Hello World');",
-        correct: "1"
+        correct: "choice1"
 
     },
     {
@@ -130,7 +138,7 @@ let questions = [
         choice2: "function myFunction()",
         choice3: "function:MyFunction()",
         choice4: "function myFunction",
-        correct: "2"
+        correct: "choice2"
 
     },
     {
@@ -139,7 +147,7 @@ let questions = [
         choice2: "if (i==5)",
         choice3: "if i==5 then",
         choice4: "if i=5",
-        correct: "2"
+        correct: "choice2"
 
     }
 ];
@@ -151,6 +159,7 @@ let runningQuestion = 0;
 
 // Render questions
 function renderQuestion() {
+    checkQuestion();
     runningQuestion++;
     let q = questions[runningQuestion];
     document.getElementById("question").innerHTML = "<p>" + q.question + "</p>";
