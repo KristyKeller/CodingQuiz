@@ -12,7 +12,6 @@ document.getElementById("start").onclick = startQuiz;
 
 function startQuiz() {
     start.style.display = "none";
-    // renderQuestion();
     quiz.style.display = "block";
 }
 
@@ -21,47 +20,44 @@ function startQuiz() {
 document.getElementById("choice1").onclick = choice1;
 
 function choice1() {
-    document.getElementById("choice1").innerHTML;
-    renderQuestion();
-  
+    var choice = document.getElementById("choice1").innerText;
+    checkQuestion(choice);
 }
 
 // Choice 2
 document.getElementById("choice2").onclick = choice2;
 
 function choice2() {
-
-    document.getElementById("choice2").innerHTML;
-    renderQuestion();
-  
+    var choice = document.getElementById("choice2").innerText;
+    checkQuestion(choice);
 }
 
 // Choice 3
 document.getElementById("choice3").onclick = choice3;
 
 function choice3() {
-
-    document.getElementById("choice3").innerHTML;
-    renderQuestion();
-   
+    var choice = document.getElementById("choice3").innerText;
+    checkQuestion(choice);
 }
 
 // Choice 4
 document.getElementById("choice4").onclick = choice4;
 
 function choice4() {
+    var choice = document.getElementById("choice4").innerText;
+    checkQuestion(choice);
 
-    document.getElementById("choice4").innerHTML;
     renderQuestion();
-   
 }
+runningQuestions = 0;
+
 
 // //Showing user if their choice is right or wrong
 var questionRight = 0;
 var questionWrong  = 0;
 function checkQuestion() {
 
-    let correctAnswer = `${questions[runningQuestion].correct}`
+    var correctAnswer = questions[runningQuestion].correct; 
    
    // let currentQuestionClass =  `.question${runningQuestion}`
 
