@@ -55,24 +55,30 @@ runningQuestions = 0;
 // //Showing user if their choice is right or wrong
 var questionRight = 0;
 var questionWrong  = 0;
-function checkQuestion() {
+function checkQuestion(choice) {
+    console.log(choice)
 
     var correctAnswer = questions[runningQuestion].correct; 
    
-   // let currentQuestionClass =  `.question${runningQuestion}`
+// change out buttons via HTML through Javascript  (look into .html)
+// too many choices 
 
-    $("button").on("click", function(){
+console.log("#choice" + (runningQuestion +1));
+    $("#test1").on("click", function(){
         let currentBtn = $(this).attr("id");
+        console.log("currentBtn",currentBtn);
         if (correctAnswer == currentBtn){
             alert("correct")
             counter = counter + 5;
         } else {
+            console.log("testing")
             counter = counter - 5;
             alert("incorrect")
+        renderQuestion();
         }
     })
 
-    //let currentQuestionAnswer = $(currentQuestionClass).find()
+
 }
     // Timer 
     //in function, do timer -10 for wrong questions
