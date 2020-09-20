@@ -1,100 +1,46 @@
-// Prompt user to start quiz
-// Once they click the start button, it will display the first quiz question
 
 //select all elements for quiz
 var start = document.getElementById("start");
 var quiz = document.getElementById("quiz");
 var question = document.getElementById("question");
-var score = 0; 
+var score = 0;
 
 //Start
 document.getElementById("start").onclick = startQuiz;
+
 
 function startQuiz() {
     start.style.display = "none";
     quiz.style.display = "block";
 }
 
-// Attach onclick to choice buttons
-//Choice 1
-document.getElementById("choice1").onclick = choice1;
-
-function choice1() {
-    var choice = document.getElementById("choice1").innerText;
-    checkQuestion(choice);
-}
-
-// Choice 2
-document.getElementById("choice2").onclick = choice2;
-
-function choice2() {
-    var choice = document.getElementById("choice2").innerText;
-    checkQuestion(choice);
-}
-
-// Choice 3
-document.getElementById("choice3").onclick = choice3;
-
-function choice3() {
-    var choice = document.getElementById("choice3").innerText;
-    checkQuestion(choice);
-}
-
-// Choice 4
-document.getElementById("choice4").onclick = choice4;
-
-function choice4() {
-    var choice = document.getElementById("choice4").innerText;
-    checkQuestion(choice);
-
-    renderQuestion();
-}
 runningQuestions = 0;
 
 
 // //Showing user if their choice is right or wrong
 var questionRight = 0;
-var questionWrong  = 0;
-function checkQuestion(choice) {
-    console.log(choice)
+var questionWrong = 0;
+function checkQuestion() {
 
-    var correctAnswer = questions[runningQuestion].correct; 
-   
-// change out buttons via HTML through Javascript  (look into .html)
-// too many choices 
-
-console.log("#choice" + (runningQuestion +1));
-    $("#test1").on("click", function(){
-        let currentBtn = $(this).attr("id");
-        console.log("currentBtn",currentBtn);
-        if (correctAnswer == currentBtn){
-            alert("correct")
-            counter = counter + 5;
-        } else {
-            console.log("testing")
-            counter = counter - 5;
-            alert("incorrect")
-        renderQuestion();
-        }
-    })
-
+    var correctAnswer = questions[runningQuestion].correct;
 
 }
-    // Timer 
-    //in function, do timer -10 for wrong questions
-    var counter = 60;
-    var interval = setInterval(function() {
-        counter--; 
-        
-        if (counter <= 0) {
-            clearInterval(interval);
-            $('timer').HTML("<h3>Time's up!</h3>");
-            return;
-        }else{
-            $('#time').text(counter);
-            console.log("Timer -->" + counter);
-        }
-    }, 1000);
+// Timer 
+//in function, do timer -10 for wrong questions
+// var counter = 60;
+// var interval = setInterval(function () {
+//     counter--;
+
+//     if (counter <= 0) {
+//         clearInterval(interval);
+//         $('timer').HTML("<h3>Time's up!</h3>");
+//         return;
+//     } else {
+//         $('#time').text(counter);
+//         console.log("Timer -->" + counter);
+//         clearInterval(countdownTimer);
+//     }
+// }, 1000);
 
 // Variables for questions
 // Question choices and correct answers
@@ -158,7 +104,6 @@ let questions = [
 var lastQuestion = questions.length - 1;
 let runningQuestion = 0;
 
-
 // Render questions
 function renderQuestion() {
     checkQuestion();
@@ -172,7 +117,3 @@ function renderQuestion() {
 
     document.getElementById("choice1").onclick = choice1;
 }
-
-
-
-

@@ -34,40 +34,51 @@
             <!-- Timer -->
             <div class="timer">
                 <div style="text-align:right;">
-                    <span id="timer">
+                    <span id="quizTimer">
                         <span id="time"> 060 </span> Seconds
                     </span>
                 </div>
             </div>
 
             <!-- Start -->
-            <p>Test your JavaScript knowledge by answering the following questions. Click <strong>start</strong>
-                to
-                begin! </p>
-            <button id="start">Start</button>
+            <p>Test your JavaScript knowledge by answering the following questions.</p>
+            <button type="button" class="btn btn-primary btn-lg" id="start">Start</button>
             <span id="quiz" style="display : none;">
 
 
                 <!-- Quiz questions -->
                 <span class="main-border">
-                    <!-- <button onclick="showAlert()"> ? -->
                     <div class="question1">
-                        <p id="question">How to write an IF statement for executing some code if 'i' is NOT
+                        <p id="question"><strong>How to write an IF statement for executing some code if 'i' is NOT
                             equal to
-                            5?</p>
-                        <p><button id="test1">
+                            5?</strong></p>
+                        <p><button id="test1" class="btn btn-primary">
                                 if i =! 5 then
                             </button></p>
-                        <p><button id="choice2">
+                        <p><button id="choice2" class="btn btn-primary">
                                 if (i <> 5)
                             </button></p>
-                        <p><button id="choice3">
+                        <p><button id="choice3" class="btn btn-primary">
                                 if i <> 5
                             </button></p>
-                        <p><button id="choice4">
+                        <p><button id="choice4" class="btn btn-primary">
                                 if (i != 5)
                             </button></p>
                     </div>
+
+                    <!-- High score and overall score-->
+                    <section class="container text-center">
+                        <section class="row-lg ">
+                            <section class="col-lg">
+                                <section id="gameOver"></section>
+                                <section id="inputSection"></section>
+                                <section id="initials"></section>
+                                <section id="finalScoreLocation"></section>
+                                <section id="initialInput"></section>
+                            </section>
+                        </section>
+                    </section>
+
         </div>
         <script src="./script.js"></script>
 </body>
