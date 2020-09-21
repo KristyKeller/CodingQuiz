@@ -24,6 +24,7 @@ JavaScript quiz that tracks and presents the user's score and records his or her
 * CSS
 
 ## License
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 Copyright 2020 ©Kristy Keller
 
