@@ -1,6 +1,6 @@
 # 📝  Coding Quiz
 
-### [CLICK HERE TO VIEW LIVE SITE](https://kristykeller.github.io/coding-quiz/)
+### [CLICK HERE TO VIEW LIVE SITE](https://kristykeller.github.io/CodingQuiz/)
 
 ## User Story
 ```
